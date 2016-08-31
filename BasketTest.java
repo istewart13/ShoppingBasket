@@ -57,4 +57,11 @@ public class BasketTest {
   public void basketIsInitiallyEmpty() {
     assertEquals(basket.getNumberOfItems(), 0);
   }
+
+  @Test
+  public void canAddItemsToBasket() {
+    basket.addItem(item);
+    basket.addItem(item2);
+    assertEquals(basket.getNumberOfItems(), 2);
+  }
 }
