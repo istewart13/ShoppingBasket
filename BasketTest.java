@@ -12,12 +12,12 @@ public class BasketTest {
   }
 
   @Test
+  public void customerHasLoyaltyCard() {
+    assertEquals(customer.checkLoyaltyCard(), true);
+  }
+
+  @Test
   public void customerHasName() {
     assertEquals(customer.getName(), "Bob");
   }
-
-  // @Test
-  // public void customerHasLoyaltyCard() {
-
-  // }
 }

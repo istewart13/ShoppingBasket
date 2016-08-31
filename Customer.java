@@ -7,9 +7,11 @@ public class Customer {
     this.name = customerName;
   }
 
+  public boolean checkLoyaltyCard() {
+    return this.hasLoyaltyCard;
+  }
+
   public String getName() {
     return this.name;
   }
-
-
 }
