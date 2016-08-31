@@ -3,7 +3,7 @@ import static org.junit.Assert.*;
 
 public class BasketTest {
 
-  // Basket basket;
+  Basket basket;
   Customer customer;
   Customer customer2;
   Item item;
@@ -15,6 +15,7 @@ public class BasketTest {
     customer2 = new Customer(false, "Mary");
     item = new Item(false, "spaghetti", 199);
     item2 = new Item(true, "tomato sauce", 299);
+    basket = new Basket();
   }
 
   @Test
@@ -50,5 +51,10 @@ public class BasketTest {
   @Test
   public void itemHasPrice() {
     assertEquals(item.getPrice(), 199);
+  }
+
+  @Test
+  public void basketIsInitiallyEmpty() {
+    assertEquals(basket.getNumberOfItems(), 0);
   }
 }
