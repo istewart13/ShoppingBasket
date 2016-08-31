@@ -1,10 +1,12 @@
 public class Item {
   private boolean validForBogof;
   private String name;
+  private int priceInPence;
 
-  public Item(boolean bogof, String itemName) {
+  public Item(boolean bogof, String itemName, int price) {
     this.validForBogof = bogof;
     this.name = itemName;
+    this.priceInPence = price;
   }
 
   public boolean isValidForBogof() {

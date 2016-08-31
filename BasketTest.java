@@ -13,7 +13,8 @@ public class BasketTest {
   public void before() {
     customer = new Customer(true, "Bob");
     customer2 = new Customer(false, "Mary");
-    item = new Item(false, "spaghetti");
+    item = new Item(false, "spaghetti", 199);
+    item2 = new Item(true, "tomato sauce", 299);
   }
 
   @Test
@@ -34,5 +35,10 @@ public class BasketTest {
   @Test
   public void itemIsNotValidForBogof() {
     assertEquals(item.isValidForBogof(), false);
+  }
+
+  @Test
+  public void itemIsValidForBogof() {
+    assertEquals(item2.isValidForBogof(), true);
   }
 }
