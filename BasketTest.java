@@ -125,4 +125,14 @@ public class BasketTest {
     basket.applyBogof();
     assertEquals(basket.getTotal(), 498, 0.001);
   }
+
+  @Test
+  public void canApplyAllDiscounts() {
+    basket.addItem(item);
+    basket.addItem(item2);
+    basket.addItem(item3);
+    basket.addItem(item4);
+    basket.applyDiscounts();
+    assertEquals(basket.getTotal(), 2114.154, 0.001);
+  }
 }

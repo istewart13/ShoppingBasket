@@ -76,4 +76,10 @@ public class Basket {
       this.total = this.total * 0.98;
     }
   }
+
+  public void applyDiscounts() {
+    applyBogof();
+    apply10PercentDiscount();
+    applyLoyaltyDiscount();
+  }
 }
