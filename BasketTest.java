@@ -46,4 +46,9 @@ public class BasketTest {
   public void itemHasName() {
     assertEquals(item.getName(), "spaghetti");
   }
+
+  @Test
+  public void itemHasPrice() {
+    assertEquals(item.getPrice(), 199);
+  }
 }
