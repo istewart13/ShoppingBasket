@@ -12,4 +12,8 @@ public class Item {
   public boolean isValidForBogof() {
     return this.validForBogof;
   }
+
+  public String getName() {
+    return this.name;
+  }
 }

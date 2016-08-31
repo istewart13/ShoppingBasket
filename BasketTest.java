@@ -41,4 +41,9 @@ public class BasketTest {
   public void itemIsValidForBogof() {
     assertEquals(item2.isValidForBogof(), true);
   }
+
+  @Test
+  public void itemHasName() {
+    assertEquals(item.getName(), "spaghetti");
+  }
 }
