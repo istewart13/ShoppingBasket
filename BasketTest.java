@@ -8,6 +8,8 @@ public class BasketTest {
   Customer customer2;
   Item item;
   Item item2;
+  Item item3;
+  Item item4;
 
   @Before
   public void before() {
@@ -15,7 +17,9 @@ public class BasketTest {
     customer2 = new Customer(false, "Mary");
     item = new Item(false, "spaghetti", 199);
     item2 = new Item(true, "tomato sauce", 299);
-    basket = new Basket();
+    item3 = new Item(true, "baked beans", 99);
+    item4 = new Item(true, "fillet steak", 1899);
+    basket = new Basket(customer);
   }
 
   @Test
@@ -79,5 +83,46 @@ public class BasketTest {
     basket.addItem(item2);
     basket.empty();
     assertEquals(basket.getNumberOfItems(), 0);
+  }
+
+  @Test
+  public void canFindBogofItems() {
+    basket.addItem(item);
+    basket.addItem(item2);
+    basket.addItem(item3);
+    basket.findBogofItems();
+    assertEquals(basket.getNumberOfBogofItems(), 2);
+  }
+
+  @Test
+  public void canFindBasketTotal() {
+    basket.addItem(item);
+    basket.addItem(item4);
+    assertEquals(basket.getTotal(), 2098, 0.001);
+  }
+
+  @Test
+  public void canApply10PercentDiscount() {
+    basket.addItem(item);
+    basket.addItem(item4);
+    basket.apply10PercentDiscount();
+    assertEquals(basket.getTotal(), 1888.2, 0.001);
+  }
+
+  @Test
+  public void canApplyLoyaltyDiscount() {
+    basket.addItem(item);
+    basket.addItem(item4);
+    basket.applyLoyaltyDiscount();
+    assertEquals(basket.getTotal(), 2056.04, 0.001);
+  }
+
+  @Test
+  public void canApplyBogof() {
+    basket.addItem(item);
+    basket.addItem(item2);
+    basket.addItem(item3);
+    basket.applyBogof();
+    assertEquals(basket.getTotal(), 498, 0.001);
   }
 }
