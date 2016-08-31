@@ -21,4 +21,8 @@ public class Basket {
   public void removeItem(Item item) {
     contents.remove(item);
   }
+
+  public void empty() {
+    contents.clear();
+  }
 }

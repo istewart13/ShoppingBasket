@@ -72,4 +72,12 @@ public class BasketTest {
     basket.removeItem(item2);
     assertEquals(basket.getNumberOfItems(), 1);
   }
+
+  @Test
+  public void canEmptyBasket() {
+    basket.addItem(item);
+    basket.addItem(item2);
+    basket.empty();
+    assertEquals(basket.getNumberOfItems(), 0);
+  }
 }
